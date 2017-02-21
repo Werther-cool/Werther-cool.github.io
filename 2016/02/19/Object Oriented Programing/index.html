@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Object Oriented Programing | Werther的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="[TOC]
+小知识点
+throw “抛出异常”  throw new TypeError(&amp;#39;&amp;quot;this&amp;quot; is null or not defined&amp;#39;);
+“use strict” 
+
+全部小写,整个字符串是个字符,不能随便添加空格,可以单引号
+作用域,在函数内部(顶部), &amp;lt;script&amp;gt; 标签内(相互独立)
+
+
+反括号  var str =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object Oriented Programing">
+<meta property="og:url" content="http://yoursite.com/2016/02/19/Object Oriented Programing/index.html">
+<meta property="og:site_name" content="Werther的博客">
+<meta property="og:description" content="[TOC]
+小知识点
+throw “抛出异常”  throw new TypeError(&amp;#39;&amp;quot;this&amp;quot; is null or not defined&amp;#39;);
+“use strict” 
+
+全部小写,整个字符串是个字符,不能随便添加空格,可以单引号
+作用域,在函数内部(顶部), &amp;lt;script&amp;gt; 标签内(相互独立)
+
+
+反括号  var str =">
+<meta property="og:image" content="http://yoursite.com/media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%889.08.22.png">
+<meta property="og:image" content="http://yoursite.com/media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%888.58.36.png">
+<meta property="og:updated_time" content="2017-02-20T08:26:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Object Oriented Programing">
+<meta name="twitter:description" content="[TOC]
+小知识点
+throw “抛出异常”  throw new TypeError(&amp;#39;&amp;quot;this&amp;quot; is null or not defined&amp;#39;);
+“use strict” 
+
+全部小写,整个字符串是个字符,不能随便添加空格,可以单引号
+作用域,在函数内部(顶部), &amp;lt;script&amp;gt; 标签内(相互独立)
+
+
+反括号  var str =">
+<meta name="twitter:image" content="http://yoursite.com/media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%889.08.22.png">
+
+  
+
+  
+    <link rel="icon" href="/images/touxiang.png">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小知识点"><span class="toc-text">小知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链"><span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断类型"><span class="toc-text">判断类型:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拼接字符串"><span class="toc-text">拼接字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用类型"><span class="toc-text">引用类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深浅拷贝"><span class="toc-text">深浅拷贝</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Object Oriented Programing" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Object Oriented Programing</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.02.19</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Werther</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>[TOC]</p>
+<h2 id="小知识点"><a href="#小知识点" class="headerlink" title="小知识点"></a>小知识点</h2><ul>
+<li>throw “抛出异常”<br>  <code>throw new TypeError(&#39;&quot;this&quot; is null or not defined&#39;);</code></li>
+<li><p>“use strict” </p>
+<ul>
+<li>全部小写,整个字符串是个字符,不能随便添加空格,可以单引号</li>
+<li>作用域,在函数内部(顶部), <code>&lt;script&gt;</code> 标签内(相互独立)</li>
+</ul>
+</li>
+<li><p>反括号  var str =  <code>字符串</code> 处理参数过长</p>
+</li>
+<li><p>== 判断值 === 判断值和类型  若为引用类型, 则判断 地址</p>
+</li>
+<li><p>with<br>with(对象){对象的作用域,this指向window}省略前缀<br>添加属性,会添加到window上</p>
+</li>
+</ul>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p><strong>私有变量和函数</strong></p>
+<pre><code>定义在构造函数内部而被this对象的变量,在外部无法访问到的变量和函数
+</code></pre><p><strong>公有变量和方法</strong></p>
+<pre><code>对外暴露接口,可以通过构造函数对象创建的对象访问的属性和方法
+</code></pre><p><strong>代码示例</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">type,number</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.type = type;   <span class="comment">//公共的属性</span></div><div class="line">        <span class="keyword">this</span>.number = number;</div><div class="line">        <span class="keyword">var</span> city = <span class="string">"广州"</span>;                <span class="comment">//私有变量</span></div><div class="line">        <span class="keyword">var</span> getNumber = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;       <span class="comment">//私有函数</span></div><div class="line">            <span class="keyword">return</span> number;</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">var</span> getType = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> type;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="comment">//能够访问私有变量和函数的方法 --- 特权方法</span></div><div class="line">        <span class="keyword">this</span>.getDescription = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(getNumber() + getType() + city);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> car = <span class="keyword">new</span> Car(<span class="string">"汽车"</span>,<span class="string">"201718"</span>);</div><div class="line">    car.getDescription();</div></pre></td></tr></table></figure>
+<ul>
+<li>prototype (object类型) 是function自带的属性,有一个constructor属性指向该函数,object没有该属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> Object.property中的属性和方法</div><div class="line"></div><div class="line">① constructor 指向原型相关联的构造函数，为Object</div><div class="line">② hasOwnProperty 判断对象中是否拥有某个实例属性(不包括原型链上面的属性)</div><div class="line">    - hasOwnProperty</div><div class="line">    - 对象.hasOwnProperty(&quot;属性&quot;)</div><div class="line">    - 类似in,但是原型对象中的属性不算</div><div class="line">③ isPrototypeOf  校验某个对象是否是指定对象的原型对象(整条原型链)</div><div class="line">④ propertyIsEnumerable 属性是否存在且可枚举(使用for循环可以遍历,即目标属性能否在for循环中显示出来)</div><div class="line">⑤ toString() 返回一个描述目标对象的字符串,对象则返回[object object]</div><div class="line">    Object.prototype.toString.call(被检测的参数如 arr) [object Array]</div><div class="line">   toString(参数) 参数出可以传入一个用于进制数的参数,该参数的默认值为10(主要针对Number类型有效)</div><div class="line">⑥ toLocaleString 同toString,但是会做一些本地化的处理。</div><div class="line">⑦ valueOf() 返回指定对象的原始值</div><div class="line">             如果该对象有 基本数据类型的值,则返回该值,</div><div class="line">             如果没有则返回this本身。</div><div class="line">             Date对象调用该方法会返回一个时间戳。</div></pre></td></tr></table></figure>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ul>
+<li><p>Object.getPrototypeOf(object) 返回obj的原型  ==&gt; 构造函数的原型属性</p>
+</li>
+<li><p>break 停止循环 continue 跳过当前 进行下次</p>
+</li>
+<li><p>delete 关键字</p>
+<ul>
+<li>删除对象的属性</li>
+<li>删除没用var 声明的对象</li>
+<li>delete 属性屏蔽 -&gt;访问原型中的属性.就相当于 实例.prototype.属性</li>
+</ul>
+</li>
+<li><p>in关键字 </p>
+<ul>
+<li>在判断属性是否存在于对象中时,key 是字符串,需要加双引号</li>
+<li>in 操作array数组时 操作的是索引值 (1 in arrar) </li>
+<li>原型对象上的属性也会被枚举</li>
+</ul>
+</li>
+<li><p>instanceOf </p>
+<ul>
+<li>对象  instanceOf  构造函数/具体类型   </li>
+<li>实例在原型链上就是,对应构造函数的实例 </li>
+</ul>
+</li>
+<li><p>对象.constructor</p>
+<ul>
+<li>(实例的constructor 来自原型对象的constructor 共同指向 构造函数)</li>
+<li>constructor 一定指向构造函数</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>修改原型中的属性 </p>
+<ul>
+<li>对象.属性 无法操作原型对象中的属性和方法</li>
+<li>对象.属性(对象).属性 可以修改原型对象的属性(对象)的属性</li>
+</ul>
+</li>
+<li><p>null 变量的值不会为null,除非手动设置</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># 函数参数是按值传递 </div><div class="line">/*如果形参名称 和 全局变量一样时 就近原则 选择num 为形参*/</div><div class="line">var num = 10;</div><div class="line">function fn(num) &#123;</div><div class="line">    num =5;          // 此时修改的为形参, 而全局变量num 没有被修改</div><div class="line">    console.log(num); //num = 5</div><div class="line">&#125;</div><div class="line">fn(num);</div><div class="line">console.log(num);  // num =10</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">    num =<span class="number">5</span>;         <span class="comment">// 此时num 为 全局变量 被修改</span></div><div class="line">    <span class="built_in">console</span>.log(n); <span class="comment">//num = 5</span></div><div class="line">&#125;</div><div class="line">fn(num);</div><div class="line"><span class="built_in">console</span>.log(num);  <span class="comment">// num = 5</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>Fun 和 Obj</p>
+<p><img src="media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%889.08.22.png" alt="屏幕快照 2017-01-29 上午9.08.22-w600"></p>
+<p><img src="media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%888.58.36.png" alt="屏幕快照 2017-01-29 上午8.58.36-w600"></p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
+<li>实现 o 继承 tmp 对象 (ECMA5方法)<ul>
+<li><code>var o = Object.creat(tmp)</code> </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;name =<span class="string">"名称"</span>&#125;;</div><div class="line"><span class="keyword">var</span> o = &#123;&#125;</div><div class="line"><span class="comment">// 单个实例实现继承</span></div><div class="line">o.__proto__ = obj;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">str.name = <span class="string">"名字"</span>;     <span class="comment">//先创建包装类型,执行完后,对象销毁</span></div><div class="line"><span class="built_in">console</span>.log(str.name)   <span class="comment">// undefined</span></div></pre></td></tr></table></figure>
+<ol>
+<li>属性 通过call传递  B继承了A的属性</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function B&#123;</div><div class="line">   A.call(this);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>遍历传递方法 (若直接赋值传递,是引用了相同的内存对象)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var i in A.prototype)&#123;</div><div class="line">    B.prototype[i]=A.prototype[i];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>封闭空间</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//1</div><div class="line">(function () &#123;</div><div class="line"></div><div class="line">&#125;)();</div><div class="line">//</div><div class="line">(function () &#123;</div><div class="line"></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+<ul>
+<li><p>caller 返回函数调用者</p>
+<ul>
+<li>场景 主要用于察看函数本身被哪个函数调用</li>
+</ul>
+</li>
+<li><p>callee</p>
+<ul>
+<li>返回正被执行的 Function 对象，也就是所指定的 Function 对象的正文.</li>
+<li>callee是arguments 的一个属性成员，它表示对函数对象本身的引用</li>
+<li>arguments.callee.length可以获取实参参数</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>call </p>
+<ul>
+<li>供爷法则:<figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- 作用:将 &quot;爷&quot; 中的this指针 改为 &quot;你&quot;</div><div class="line">- 1 将伪数组</div><div class="line">(document.getbytagname()  arguments $(&apos;.class&apos;))</div><div class="line">转换成真数组</div><div class="line">`Array.prototype.slice.call(fackArray);`</div><div class="line">- 2 判断类型:  </div><div class="line">  ```tostring.call(123)     [object number]</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>apply</p>
+<ul>
+<li>和call一样,参数是数组</li>
+<li>apply应用 ,保留this指向</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//因为document.getElementById方法的内部实现中需要使用到this,这个this本来期望指向的是document对象</span></div><div class="line"><span class="comment">//当我们以document.getElementById来调用的时候,内部的this指向document对象</span></div><div class="line"><span class="comment">//但是当我们以getId的方式调用的时候,内部的this指向的是window对象(因为我们以普通的方式进行调用)</span></div><div class="line"></div><div class="line"> <span class="comment">//借用apply来修正this</span></div><div class="line"><span class="built_in">document</span>.getElementById = (<span class="function"><span class="keyword">function</span> (<span class="params">func</span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">       <span class="keyword">return</span> func.apply(<span class="built_in">document</span>,<span class="built_in">arguments</span>);</div><div class="line">   &#125;</div><div class="line">&#125;)(<span class="built_in">document</span>.getElementById);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> getId = <span class="built_in">document</span>.getElementById;</div><div class="line"><span class="keyword">var</span> div = getId(<span class="string">'demo'</span>);        <span class="comment">//会报错?</span></div><div class="line"><span class="built_in">console</span>.log(div);</div></pre></td></tr></table></figure>
+<h3 id="判断类型"><a href="#判断类型" class="headerlink" title="判断类型:"></a>判断类型:</h3><ul>
+<li>tostring.call(123)     [object number]</li>
+<li>[]是不是Array的一个实例</li>
+<li><code>[] instanceof Array</code></li>
+<li><code>[].constructor === Array</code></li>
+<li>typeof (关键字) 返回值为字符串<br> <code>if(typeof fn == &#39;Function&#39;){}</code></li>
+</ul>
+<h3 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1 拼接字符串</span></div><div class="line"><span class="keyword">var</span> arr1  = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr1.push.apply(arr1,arr2);</div><div class="line"></div><div class="line"><span class="comment">// 2 求数组中的最大值</span></div><div class="line"><span class="comment">//(Max只能接受离散值) 这里先转换为 Math.max.call(null,3,4,5);</span></div><div class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr2);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>format</p>
+</li>
+<li><p>拼接 template 模板 绑定集合</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> &lt;!--模板王者演示--&gt;</div><div class="line">&lt;script id="arttemplate" type="text/html"&gt;</div><div class="line">    &lt;h2&gt;&#123;&#123;name&#125;&#125;&lt;/h2&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &#123;&#123;each films&#125;&#125;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;strong&gt;电影名称：&lt;/strong&gt;&#123;&#123;$value.title&#125;&#125;&lt;br&gt;</div><div class="line">                &lt;strong style='color:red'&gt;导演&lt;/strong&gt;&#123;&#123;$value.lead&#125;&#125;</div><div class="line">                &lt;strong style='color:green'&gt;主演:&lt;/strong&gt;&#123;&#123;$value.role&#125;&#125;</div><div class="line">            &lt;/li&gt;</div><div class="line">        &#123;&#123;/each&#125;&#125;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>###字符串:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line">接近数组: concat拼接, indexOf , charAt(index)返回特定位置的字符 </div><div class="line">return 'cat'.charAt(1); // returns "a"</div><div class="line">return 'cat'[1]; // returns "a"</div><div class="line">substr (fromIndex, length)  //删除的长度 </div><div class="line">substring(startIndex, endIndex)  //删除截止到</div><div class="line">slice(startIndex, endIndex) </div><div class="line">slice可对数组操作，substring不行</div><div class="line">    </div><div class="line">###字符串 -&gt; 数组 split()分割  *带p的 常用</div><div class="line">按给定字符串分割，返回分割后的多个字符串组成的字符串数组。</div><div class="line">    </div><div class="line">String.prototype.trim()</div><div class="line">从字符串的开始和结尾去除空格。参照部分 ECMAScript 5 标准。</div><div class="line">```  </div><div class="line"></div><div class="line">### 数组:</div><div class="line"></div><div class="line">```Js</div><div class="line">组合记忆 shift unshift pop push</div><div class="line">接近符串: 合并concat ,indexOf()返回索引, slice(start, end) 数组截取</div><div class="line"></div><div class="line">//创建一个数组的复制</div><div class="line">var shallowCopy = fruits.slice(); </div><div class="line"></div><div class="line">数组 -&gt; 字符串  join(separator) 数组拼接成字符串</div><div class="line"></div><div class="line">###splice  *带p的 常用 </div><div class="line">        splice(start, deleteCount, val1, val2,...) </div><div class="line">        从start位置开始删除,删除deleteCount个,添加val1,val2</div><div class="line"></div><div class="line"></div><div class="line">// ECMA5  </div><div class="line">0.</div><div class="line">var fruits =["apple","banana"]</div><div class="line">fruits.forEach(function (item, index, array) &#123; //遍历</div><div class="line">  console.log(item, index); // Apple 0   Banana 1</div><div class="line">&#125;);</div><div class="line"></div><div class="line">1.</div><div class="line">arr.every(callback[, thisArg]) //不改变原数组,多用来判断</div><div class="line">callback  用来测试每个元素的函数。</div><div class="line">thisArg   执行 callback 时使用的 this 值。</div><div class="line"></div><div class="line">2.</div><div class="line">array.map() 方法返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。</div><div class="line"></div><div class="line">array.map(callback[, thisArg])</div><div class="line"></div><div class="line">callback 原数组中的元素经过该方法后返回一个新的元素。</div><div class="line">currentValue   callback 的第一个参数，数组中当前被传递的元素。</div><div class="line">index          callback 的第二个参数，数组中当前被传递的元素的索引。</div><div class="line">array          callback 的第三个参数，调用 map 方法的数组。</div><div class="line">thisArg        执行 callback 函数时 this 指向的对象。</div><div class="line"></div><div class="line">常用方法:</div><div class="line">000. 示例</div><div class="line">array.map(function(currentValue, index, array)&#123;</div><div class="line">    </div><div class="line">&#125;)</div><div class="line"></div><div class="line">001. 返回数组各值的平方根</div><div class="line">var numbers = [1, 4, 9];</div><div class="line">var roots = numbers.map(Math.sqrt);</div><div class="line">/* roots的值为[1, 2, 3], numbers的值仍为[1, 4, 9] */</div><div class="line"></div><div class="line">002. 返回数组对应ASCII</div><div class="line">var map = Array.prototype.map</div><div class="line">var a = map.call("Hello World", function(x) &#123; </div><div class="line">  return x.charCodeAt(0); </div><div class="line">&#125;)</div><div class="line"></div><div class="line">3.</div><div class="line">Array.isArray()</div><div class="line">假如一个变量是数组则返回true，否则返回false。</div><div class="line"></div><div class="line">4.</div><div class="line">Array.prototype.toString()</div><div class="line">返回一个由所有数组元素组合而成的字符串。遮蔽了原型链上的 </div><div class="line">Object.prototype.toString() 方法。</div><div class="line"></div><div class="line">5. //待定</div><div class="line">Array.from() </div><div class="line">从类(伪)数组或者迭代对象（iterable object）中创建一个新的数组实例。</div><div class="line"></div><div class="line">Array.from(arrayLike[, mapFn[, thisArg]])</div><div class="line">arrayLike  想要转换成真实数组的类数组对象或可遍历对象。</div><div class="line">mapFn   可选参数，如果指定了该参数，则最后生成的数组会经过该函数的加工处理后再返回。</div><div class="line">thisArg  可选参数，执行 mapFn 函数时 this 的值。</div><div class="line"></div><div class="line">6. 数组 转 字符串</div><div class="line">str = JSON.stringify(array)  </div><div class="line">//将JavaScript值转换为JSON字符串</div><div class="line">// JSON 序列化</div></pre></td></tr></table></figure>
+<p>###new 的原理</p>
+<ul>
+<li>先开辟一个内存空间,先创建一个新的空对象 </li>
+<li>把this 指向这个空对象,拷贝函数中的属性和方法</li>
+<li>把空对象的 <em>proto</em> 指向 构造函数内部 原型对象 prototype</li>
+<li>构造函数执行完成后如果没有 return 把这个新对象返回,(return的是基本数据类型和null,依然返回原对象,因为指针依然指向原对象)</li>
+</ul>
+<p>实例拷贝原理:<br>实例化的时候,都会将构造函数的属性拷贝一份(包括隐藏属性),同时赋给新值,因为有的构造函数有默认值,就会讲内存空间替换掉</p>
+<p>构造函数:<br>return {}. 代替原对象<br>return ‘jacket’ 返回原对象</p>
+<p>定义一个构造函数 是不分配内存的<br>只有实例化的时候 才分配内存</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"> 例题<span class="number">1</span>:</div><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">x</span>:<span class="number">1</span>&#125;;</div><div class="line">b = a;</div><div class="line">a.x = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(b.x);  <span class="comment">//2</span></div><div class="line">a = &#123;<span class="attr">x</span>:<span class="number">3</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(b.x);  <span class="comment">//2</span></div><div class="line"></div><div class="line">例题<span class="number">2</span>:</div><div class="line"> <span class="keyword">var</span> a = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;;</div><div class="line">    <span class="keyword">var</span> b = a;</div><div class="line">    a.x = a = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;;  </div><div class="line">    <span class="built_in">console</span>.log(a.x);  <span class="comment">// undefined</span></div><div class="line">    <span class="built_in">console</span>.log(b.x);  <span class="comment">// &#123;n:2&#125;</span></div><div class="line">    <span class="built_in">console</span>.log(a);    <span class="comment">// &#123;n:2&#125;</span></div><div class="line">    <span class="built_in">console</span>.log(b)     <span class="comment">// &#123;n:1,x:&#123;n:2&#125;</span></div><div class="line">    </div><div class="line"> <span class="comment">/*</span></div><div class="line">  根据优先级 a.x -&gt; 给原&#123;n:1&#125;对象 添加一个x属性 undefined,</div><div class="line">  根据 赋值运算从右往左, </div><div class="line">  a=&#123;n:2&#125; -&gt; a 指向一个新对象&#123;n:2&#125;,</div><div class="line">  a.x = a -&gt; &#123;n:1&#125;.x 指向 &#123;n:2&#125;</div><div class="line">  */</div></pre></td></tr></table></figure>
+<h3 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj1,obj2</span>) </span>&#123;</div><div class="line">obj2 = obj2 || &#123;&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> obj1)</div><div class="line">&#123;</div><div class="line">  <span class="comment">//判断是否是实例属性</span></div><div class="line">  <span class="keyword">if</span>(obj1.hasOwnProperty(i))</div><div class="line">  &#123;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> obj1[i] == <span class="string">'object'</span>)</div><div class="line">      &#123;</div><div class="line">          obj2[i] = <span class="built_in">Array</span>.isArray(obj1[i])?[]:&#123;&#125;;</div><div class="line">          <span class="comment">// 先创建一个空对象,来接收对象</span></div><div class="line">          deepCopy(obj1[i],obj2[i]); <span class="comment">//函数的调用(实参的值赋值给形参)</span></div><div class="line">      &#125;<span class="keyword">else</span></div><div class="line">      &#123;</div><div class="line">          <span class="comment">//基础数据类型</span></div><div class="line">          obj2[i] = obj1[i];</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">deepCopy(obj,obj2);</div></pre></td></tr></table></figure>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/02/19/hello-world/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+	<section class="comment">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="index.html" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"werther"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+	</section>
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
