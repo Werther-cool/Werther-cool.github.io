@@ -1,4 +1,9 @@
-# Object Oriented Programing
+---
+title: Object Oriented Programing
+date: 2016-02-19 19:22:23
+tags:
+---
+
 
 [TOC]
 
@@ -379,8 +384,8 @@ str = JSON.stringify(array)
 // JSON 序列化
 ```
 
-
 ###new 的原理
+
   - 先开辟一个内存空间,先创建一个新的空对象 
   - 把this 指向这个空对象,拷贝函数中的属性和方法
   - 把空对象的 _proto_ 指向 构造函数内部 原型对象 prototype
@@ -396,9 +401,6 @@ return 'jacket' 返回原对象
 
 定义一个构造函数 是不分配内存的
 只有实例化的时候 才分配内存
-
-
-
 
 
 
