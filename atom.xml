@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-20T08:37:33.000Z</updated>
+  <updated>2017-02-22T12:23:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[layout]</title>
+    <link href="http://yoursite.com/2017/02/22/layout/"/>
+    <id>http://yoursite.com/2017/02/22/layout/</id>
+    <published>2017-02-22T12:21:04.000Z</published>
+    <updated>2017-02-22T12:23:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2017/02/22/layout/saber.jpg" alt="saber-w600"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/02/22/layout/saber.jpg&quot; alt=&quot;saber-w600&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo优化插件</title>
@@ -64,12 +84,12 @@
     <published>2017-02-20T07:57:33.000Z</published>
     <updated>2017-02-20T08:02:41.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="images/saber.jpg" alt="saber"></p>
+    <content type="html"><![CDATA[<p><img src="/2017/02/20/My-Gallery/saber.jpg" alt="saber"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;images/saber.jpg&quot; alt=&quot;saber&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2017/02/20/My-Gallery/saber.jpg&quot; alt=&quot;saber&quot;&gt;&lt;/p&gt;
 
     
     </summary>
@@ -211,8 +231,8 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">    num =<span class="number">5</span>;         <span class="comment">// 此时num 为 全局变量 被修改</span></div><div class="line">    <span class="built_in">console</span>.log(n); <span class="comment">//num = 5</span></div><div class="line">&#125;</div><div class="line">fn(num);</div><div class="line"><span class="built_in">console</span>.log(num);  <span class="comment">// num = 5</span></div></pre></td></tr></table></figure>
 <hr>
 <h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>Fun 和 Obj</p>
-<p><img src="media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%889.08.22.png" alt="屏幕快照 2017-01-29 上午9.08.22-w600"></p>
-<p><img src="media/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%888.58.36.png" alt="屏幕快照 2017-01-29 上午8.58.36-w600"></p>
+<p><img src="/2016/02/19/Object Oriented Programing/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%889.08.22.png" alt="屏幕快照 2017-01-29 上午9.08.22-w600"></p>
+<p><img src="/2016/02/19/Object Oriented Programing/14869708097651/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-29%20%E4%B8%8A%E5%8D%888.58.36.png" alt="屏幕快照 2017-01-29 上午8.58.36-w600"></p>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
 <li>实现 o 继承 tmp 对象 (ECMA5方法)<ul>
 <li><code>var o = Object.creat(tmp)</code> </li>
