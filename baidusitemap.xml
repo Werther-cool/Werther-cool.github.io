@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/12/22/Object%20Oriented%20Programing/</loc>
+    <lastmod>2017-02-22T12:29:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>[layout]</title>
+        <pubTime>2016-12-22T12:21:04.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/02/22/layout/</loc>
     <lastmod>2017-02-22T12:23:20.000Z</lastmod>
     <data>
@@ -27,21 +42,6 @@
         <display>
         <title>Hexo优化插件</title>
         <pubTime>2017-02-20T08:34:29.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/02/19/Object%20Oriented%20Programing/</loc>
-    <lastmod>2017-02-20T08:26:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>Object Oriented Programing</title>
-        <pubTime>2016-02-19T11:22:23.000Z</pubTime>
         
          
            
