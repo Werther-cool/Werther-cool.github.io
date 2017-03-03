@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/02/20/My-Gallery/</loc>
-    <lastmod>2017-03-03T11:47:10.000Z</lastmod>
+    <loc>http://yoursite.com/2016/01/22/Mac%E4%BA%8C/</loc>
+    <lastmod>2017-03-03T12:27:35.000Z</lastmod>
     <data>
         <display>
-        <title>My Gallery</title>
-        <pubTime>2017-02-20T07:57:33.000Z</pubTime>
+        <title>Mac 脱离鼠标 (二)</title>
+        <pubTime>2016-01-22T12:21:04.000Z</pubTime>
         
          
            
@@ -19,12 +19,27 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/06/22/Mac%20%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2017-03-03T11:47:04.000Z</lastmod>
+    <loc>http://yoursite.com/2016/01/22/mac/</loc>
+    <lastmod>2017-03-03T12:27:26.000Z</lastmod>
     <data>
         <display>
-        <title>Mac 设置指南</title>
-        <pubTime>2015-06-22T06:21:04.000Z</pubTime>
+        <title>Mac 脱离鼠标 (一)</title>
+        <pubTime>2016-01-22T12:21:04.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/01/22/Mac%20%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2017-03-03T12:25:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac 脱离鼠标-设置指南</title>
+        <pubTime>2016-01-22T06:21:04.000Z</pubTime>
         
          
            
@@ -35,11 +50,26 @@
     
   <url>
     <loc>http://yoursite.com/2015/08/22/atom%20%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2017-03-03T11:28:51.000Z</lastmod>
+    <lastmod>2017-03-03T12:24:51.000Z</lastmod>
     <data>
         <display>
         <title>atom 快捷键</title>
         <pubTime>2015-08-22T12:21:04.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/02/20/My-Gallery/</loc>
+    <lastmod>2017-03-03T11:47:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>My Gallery</title>
+        <pubTime>2017-02-20T07:57:33.000Z</pubTime>
         
          
            
