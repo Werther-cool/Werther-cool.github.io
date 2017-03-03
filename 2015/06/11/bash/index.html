@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git 命令大全 | Werther的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="[TOC]
+加密##MD5不可逆加盐 + 一个独有的字符串 
+对称加密本地 - 服务端  都保存一个 字符串通过这个字符串来解密
+加密
+非对称加密   每台电脑都一对公钥和私钥, ssh -keygen -t rsa 生成
+1. 申请时,服务器电脑发送一个 公钥
+2. 本地发送 密码 和 公钥
+3. 公钥 只有相对应的电脑 私钥  才能解开
+免密码登入 1.登入 发送本地的rsa_pub 2.远程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 命令大全">
+<meta property="og:url" content="http://yoursite.com/2015/06/11/bash/index.html">
+<meta property="og:site_name" content="Werther的博客">
+<meta property="og:description" content="[TOC]
+加密##MD5不可逆加盐 + 一个独有的字符串 
+对称加密本地 - 服务端  都保存一个 字符串通过这个字符串来解密
+加密
+非对称加密   每台电脑都一对公钥和私钥, ssh -keygen -t rsa 生成
+1. 申请时,服务器电脑发送一个 公钥
+2. 本地发送 密码 和 公钥
+3. 公钥 只有相对应的电脑 私钥  才能解开
+免密码登入 1.登入 发送本地的rsa_pub 2.远程">
+<meta property="og:image" content="http://yoursite.com/2015/06/11/bash/vi.png">
+<meta property="og:updated_time" content="2017-03-03T12:45:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 命令大全">
+<meta name="twitter:description" content="[TOC]
+加密##MD5不可逆加盐 + 一个独有的字符串 
+对称加密本地 - 服务端  都保存一个 字符串通过这个字符串来解密
+加密
+非对称加密   每台电脑都一对公钥和私钥, ssh -keygen -t rsa 生成
+1. 申请时,服务器电脑发送一个 公钥
+2. 本地发送 密码 和 公钥
+3. 公钥 只有相对应的电脑 私钥  才能解开
+免密码登入 1.登入 发送本地的rsa_pub 2.远程">
+<meta name="twitter:image" content="http://yoursite.com/2015/06/11/bash/vi.png">
+
+  
+
+  
+    <link rel="icon" href="/touxiang.png">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#加密"><span class="toc-text">加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对称加密"><span class="toc-text">对称加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非对称加密"><span class="toc-text">非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#免密码登入"><span class="toc-text">免密码登入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vi-编辑器"><span class="toc-text">vi 编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git"><span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#先删后加"><span class="toc-text">先删后加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支"><span class="toc-text">分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程"><span class="toc-text">远程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tag"><span class="toc-text">tag</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux基础命令；"><span class="toc-text">linux基础命令；</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mac"><span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后介绍下Git基础命令的含义；"><span class="toc-text">然后介绍下Git基础命令的含义；</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-bash" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Git 命令大全</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.06.11</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Werther</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://github.com/Werther-cool/2015/06/11/bash/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>[TOC]</p>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>##MD5<br>不可逆<br>加盐 + 一个独有的字符串 </p>
+<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>本地 - 服务端  都保存一个 字符串<br>通过这个字符串来解密</p>
+<p>加密</p>
+<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>   每台电脑都一对公钥和私钥, ssh -keygen -t rsa 生成</p>
+<pre><code>1. 申请时,服务器电脑发送一个 公钥
+2. 本地发送 密码 和 公钥
+3. 公钥 只有相对应的电脑 私钥  才能解开
+</code></pre><h4 id="免密码登入"><a href="#免密码登入" class="headerlink" title="免密码登入"></a>免密码登入</h4><p> 1.登入 发送本地的rsa_pub<br> 2.远程的rsa_pub 发送到本地<br> 3.本地的rsa 和 远程的rsa_pub  发送到服务器</p>
+<h2 id="vi-编辑器"><a href="#vi-编辑器" class="headerlink" title="vi 编辑器"></a>vi 编辑器</h2><p>vi<br>cat 查看<br> mv移动<br> cp拷贝<br>    <img src="/2015/06/11/bash/vi.png" alt="屏幕快照 2017-03-01 上午9.03.10 w400"></p>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>平衡分支 通过develop(开发)</p>
+<p>git init<br>git add<br>git commit<br>git rm 删除文件</p>
+<p>git –version git测试</p>
+<p>.gitignore 文件内 记录 忽略的文件</p>
+<p>git add –all<br>git add 文件名   将文件放到暂存区<br>git commit 将当前文件夹的副本保存<br>git commit -m 提交说明 很有必要 每个版本干了什么<br>一般完成一个小单元 (功能) 提交一次<br>git commit -m”wrote a readme file”<br>git staus 状态 </p>
+<p>git diff 区别<br>git log 日志 修改日志<br>用git reflog  查看命令历史<br>git reset –hard 版本号前6位 回退到之前的版本<br>$ git reset –hard HEAD^<br>git clone 网址 .  克隆到当前地址 </p>
+<p>想直接丢弃工作区的修改时，用命令git checkout – file</p>
+<h3 id="先删后加"><a href="#先删后加" class="headerlink" title="先删后加"></a>先删后加</h3><p>git remote rm origin<br>git remote add origin [url]<br>git push origin master 提交到远端</p>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>git branch 查看当前分支<br>git checkout -b dev 等同于<br>$ git branch dev 创建 分支dev<br>$ git checkout dev 切换分支</p>
+<p>git merge dev 将分支dev 合并到master<br>git branch -d dev  删除分支dev</p>
+<p>git log –graph</p>
+<p>git stash - 临时储存<br>git stash apply  恢复储存<br>git stash list  储存列表<br>git stash pop 恢复并删除</p>
+<h3 id="远程"><a href="#远程" class="headerlink" title="远程"></a>远程</h3><p>git push git@gitlab.com:Werther-cool/my-test.git master<br>git push origin dev 将本地dev 推送到远程,若没有就自动创建<br>git push origin branch-name 从本地推送分支<br>git pull 下从远端拉取<br>git checkout -b branch-name origin/branch-name 在本地创建和远程分支对应的分支<br>git branch –set-upstream branch-name origin/branch-name建立本地分支和远程分支的关联</p>
+<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>git tag v1.0  默认标签打给最新的commit<br>git log –pretty=oneline –abbrev-commit 显示操作短码<br>git tag v0.9 42a6d4a<br>git tag 查看所有tag<br>git show v0.9 查看详细信息<br>git tag -d v0.9 删除该tag</p>
+<h4 id="linux基础命令；"><a href="#linux基础命令；" class="headerlink" title="linux基础命令；"></a>linux基础命令；</h4><p>touch    111.txt 新建文本文件<br>rm 文件   删除文件<br>sudo -s   获取绝对用户权限<br>cd xxx    进入xxx目录<br>ls (-a/-A)   显示当前路径下所有文件(隐藏的)<br>pwd       显示当前绝对路径<br>mkdir  xxx   创建文件夹xxx<br>man xxx     查看xxx命令手册</p>
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>//显示隐藏文件<br>defaults write com.apple.finder AppleShowAllFiles Yes &amp;&amp; killall Finder<br>//不显示隐藏文件<br>defaults write com.apple.finder AppleShowAllFiles No &amp;&amp; killall Finder </p>
+<h3 id="然后介绍下Git基础命令的含义；"><a href="#然后介绍下Git基础命令的含义；" class="headerlink" title="然后介绍下Git基础命令的含义；"></a>然后介绍下Git基础命令的含义；</h3><p>clone   克隆远程仓库<br>init       初始化仓库<br>remote 连接远程仓库<br>pull      从远程仓库下拉获取新数据<br>push    将本地仓库新增或修改文件上传到远程仓库<br>add     添加文件或者修改文件，commit以及push之前使用<br>log      当前仓库提交过的日志信息<br>status  当前仓库版本状态<br>commit 提交到当前仓库中<br>branch 分支命令，相关增删查操作<br>checkout 使用远程仓库最后一个版本完全覆盖当前仓库内容／选择分支branch<br>diff      对比版本内容<br>merge   合并版本内容</p>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2015/08/22/atom 快捷键/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2015/06/11/bash/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
