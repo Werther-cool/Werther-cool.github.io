@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-03T08:31:45.000Z</updated>
+  <updated>2017-03-03T08:37:26.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,33 +16,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[React官方教程笔记]</title>
+    <title>React官方教程笔记</title>
     <link href="http://yoursite.com/2017/02/22/layout/"/>
     <id>http://yoursite.com/2017/02/22/layout/</id>
     <published>2017-02-22T12:21:04.000Z</published>
-    <updated>2017-03-03T08:31:45.000Z</updated>
+    <updated>2017-03-03T08:37:26.000Z</updated>
     
     <content type="html"><![CDATA[<p></p><h3>1. 安装</h3><p></p>
 <p></p><h4>1.1 尝试</h4><p></p>
-<p></p><p>开始之前可以先去<a href="http://codepen.io/gaearon/pen/rrpgNB?editors=0010" target="_blank">codePen</a>尝试一下，也可以下载这份<a href="https://facebook.github.io/react/downloads/single-file-example.html" target="_blank">HTML文件</a>并编辑它来尝试React。</p><p></p>
-<p></p><h4>1.2 <a href="https://github.com/facebookincubator/create-react-app" target="_blank">Creat React App</a>工具</h4><p></p>
-<p></p><p>推荐使用React官方提供的<a href="https://github.com/facebookincubator/create-react-app" target="_blank">Creat React App</a>工具，来快速新建React单页面应用项目。</p><p></p>
-<pre><code>npm install -g create-react-app
-create-react-app hello-world
-cd hello-world
-npm start</code></pre>
-<h4>1.3 推荐工作流</h4>
-<p>虽然React可以在没有任何构建工具的情况下进行使用，但在生产环境还是应该使用成套的构建工具来将React用于你的项目。一个现代化的（前端）工作流通常由以下三部分组成：</p>
-<ul>
-<li>
-<strong>包管理器</strong>：比如<a href="https://yarnpkg.com/" target="_blank">Yarn</a>或<a href="https://www.npmjs.com/" target="_blank">Npm</a>，可以让你更方便使用第三方库而不用自己造轮子</li>
-<li>
-<strong>编译器</strong>：比如<a href="http://babeljs.io/" target="_blank">Babel</a>，能翻译使用了最新语法的代码到浏览器兼容较好的版本</li>
-<li>
-<strong>打包器</strong> ：比如<a href="https://webpack.github.io/" target="_blank">Webpack</a>或<a href="http://browserify.org/" target="_blank">Browserify</a>，让你能够编写各种风格的模块化的代码，由它们打包和压缩</li>
-</ul>
-<p>基于以上工作流，你可以通过<a href="https://www.npmjs.com/" target="_blank">Npm</a>或者<a href="https://yarnpkg.com/" target="_blank">Yarn</a>来将React安装到项目，然后使用<a href="http://babeljs.io/" target="_blank">Babel</a>来编译JSX和ES6语法，最终用于生产环境的代码还需要经过<a href="https://webpack.github.io/" target="_blank">Webpack</a>或<a href="http://browserify.org/" target="_blank">Browserify</a>的打包和压缩才能使用。</p>
-<h4>1.4 CDN服务</h4>
+<p>开始之前可以先去<a href="http://codepen.io/gaearon/pen/rrpgNB?editors=0010" target="_blank">codePen</a>尝试一下，也可以下载这份<a href="https://facebook.github.io/react/downloads/single-file-example.html" target="_blank">HTML文件</a>并编辑它来尝试React。</p><br><h4>1.2 <a href="https://github.com/facebookincubator/create-react-app" target="_blank">Creat React App</a>工具</h4><br><p>推荐使用React官方提供的<a href="https://github.com/facebookincubator/create-react-app" target="_blank">Creat React App</a>工具，来快速新建React单页面应用项目。</p>
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line">create-react-app hello-world</div><div class="line">cd hello-world</div><div class="line">npm start</div></pre></td></tr></table></figure>
+<p></p><h4>1.3 推荐工作流</h4><p></p>
+<p></p><p>虽然React可以在没有任何构建工具的情况下进行使用，但在生产环境还是应该使用成套的构建工具来将React用于你的项目。一个现代化的（前端）工作流通常由以下三部分组成：</p><p></p>
+<p><ul></ul></p>
+<p><li><br><strong>包管理器</strong>：比如<a href="https://yarnpkg.com/" target="_blank">Yarn</a>或<a href="https://www.npmjs.com/" target="_blank">Npm</a>，可以让你更方便使用第三方库而不用自己造轮子</li></p>
+<p><li><br><strong>编译器</strong>：比如<a href="http://babeljs.io/" target="_blank">Babel</a>，能翻译使用了最新语法的代码到浏览器兼容较好的版本</li></p>
+<p><li><br><strong>打包器</strong> ：比如<a href="https://webpack.github.io/" target="_blank">Webpack</a>或<a href="http://browserify.org/" target="_blank">Browserify</a>，让你能够编写各种风格的模块化的代码，由它们打包和压缩</li><br></p>
+<p></p><p>基于以上工作流，你可以通过<a href="https://www.npmjs.com/" target="_blank">Npm</a>或者<a href="https://yarnpkg.com/" target="_blank">Yarn</a>来将React安装到项目，然后使用<a href="http://babeljs.io/" target="_blank">Babel</a>来编译JSX和ES6语法，最终用于生产环境的代码还需要经过<a href="https://webpack.github.io/" target="_blank">Webpack</a>或<a href="http://browserify.org/" target="_blank">Browserify</a>的打包和压缩才能使用。</p><p></p>
+<p></p><h4>1.4 CDN服务</h4><p></p>
 <pre><code class="html">&lt;!--开发环境--&gt;
 &lt;script src="https://unpkg.com/react@15/dist/react.js"&gt;&lt;/script&gt;
 &lt;script src="https://unpkg.com/react-dom@15/dist/react-dom.js"&gt;&lt;/script&gt;
@@ -854,7 +847,7 @@ function WelcomeDialog() {
     
       &lt;p&gt;&lt;/p&gt;&lt;h3&gt;1. 安装&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h4&gt;1.1 尝试&lt;/h4&gt;&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p&gt;开始之前可以先去&lt;a href=&quot;http://codepen.io/gaearon/pen/rrpgNB?editors=0010&quot; tar
+&lt;p&gt;开始之前可以先去&lt;a href=&quot;http://codepen.io/gaearon/pen/rrpgNB?editors=0010&quot; target=&quot;_b
     
     </summary>
     
