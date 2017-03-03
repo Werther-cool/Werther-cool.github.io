@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-22T12:23:20.000Z</updated>
+  <updated>2017-03-03T08:31:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,19 +16,845 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[layout]</title>
+    <title>[React官方教程笔记]</title>
     <link href="http://yoursite.com/2017/02/22/layout/"/>
     <id>http://yoursite.com/2017/02/22/layout/</id>
     <published>2017-02-22T12:21:04.000Z</published>
-    <updated>2017-02-22T12:23:20.000Z</updated>
+    <updated>2017-03-03T08:31:45.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2017/02/22/layout/saber.jpg" alt="saber-w600"></p>
+    <content type="html"><![CDATA[<p></p><h3>1. 安装</h3><p></p>
+<p></p><h4>1.1 尝试</h4><p></p>
+<p></p><p>开始之前可以先去<a href="http://codepen.io/gaearon/pen/rrpgNB?editors=0010" target="_blank">codePen</a>尝试一下，也可以下载这份<a href="https://facebook.github.io/react/downloads/single-file-example.html" target="_blank">HTML文件</a>并编辑它来尝试React。</p><p></p>
+<p></p><h4>1.2 <a href="https://github.com/facebookincubator/create-react-app" target="_blank">Creat React App</a>工具</h4><p></p>
+<p></p><p>推荐使用React官方提供的<a href="https://github.com/facebookincubator/create-react-app" target="_blank">Creat React App</a>工具，来快速新建React单页面应用项目。</p><p></p>
+<pre><code>npm install -g create-react-app
+create-react-app hello-world
+cd hello-world
+npm start</code></pre>
+<h4>1.3 推荐工作流</h4>
+<p>虽然React可以在没有任何构建工具的情况下进行使用，但在生产环境还是应该使用成套的构建工具来将React用于你的项目。一个现代化的（前端）工作流通常由以下三部分组成：</p>
+<ul>
+<li>
+<strong>包管理器</strong>：比如<a href="https://yarnpkg.com/" target="_blank">Yarn</a>或<a href="https://www.npmjs.com/" target="_blank">Npm</a>，可以让你更方便使用第三方库而不用自己造轮子</li>
+<li>
+<strong>编译器</strong>：比如<a href="http://babeljs.io/" target="_blank">Babel</a>，能翻译使用了最新语法的代码到浏览器兼容较好的版本</li>
+<li>
+<strong>打包器</strong> ：比如<a href="https://webpack.github.io/" target="_blank">Webpack</a>或<a href="http://browserify.org/" target="_blank">Browserify</a>，让你能够编写各种风格的模块化的代码，由它们打包和压缩</li>
+</ul>
+<p>基于以上工作流，你可以通过<a href="https://www.npmjs.com/" target="_blank">Npm</a>或者<a href="https://yarnpkg.com/" target="_blank">Yarn</a>来将React安装到项目，然后使用<a href="http://babeljs.io/" target="_blank">Babel</a>来编译JSX和ES6语法，最终用于生产环境的代码还需要经过<a href="https://webpack.github.io/" target="_blank">Webpack</a>或<a href="http://browserify.org/" target="_blank">Browserify</a>的打包和压缩才能使用。</p>
+<h4>1.4 CDN服务</h4>
+<pre><code class="html">&lt;!--开发环境--&gt;
+&lt;script src="https://unpkg.com/react@15/dist/react.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/react-dom@15/dist/react-dom.js"&gt;&lt;/script&gt;
+&lt;!--生产环境--&gt;
+&lt;script src="https://unpkg.com/react@15/dist/react.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"&gt;&lt;/script&gt;</code></pre>
+<h3>2. Hello World</h3>
+<p>一个最基本的React例子：</p>
+<pre><code class="javascript">ReactDom.render(
+  &lt;h1&gt;Hello world!&lt;/h1&gt;,
+  document.getElementById('root')
+)</code></pre>
+<p>你可以在<a href="http://codepen.io/gaearon/pen/ZpvBNJ?editors=0010" target="_blank">COdePen</a>上尝试修改这段代码看看效果。</p>
+<p>React推荐配合ES6语法使用，但仅需要了解<code>() =&gt; {}</code>、<code>const</code>、<code>let</code>、<code>`template literals`</code>和<code>classes</code>这几个特性即可</p>
+<h3>3. 初识JSX</h3>
+<pre><code class="javascript">const element = &lt;h1&gt;hello world&lt;/h1&gt;</code></pre>
+<p>上面这段既不是字符串又不是HTML的代码（其实主要指的是<code>&lt;h1&gt;hello world&lt;/h1&gt;</code>）就是JSX了。官方推荐搭配使用JSX，有别于模板语言，JSX是全功能的JavaScript。JSX 用于创建“React元素”。</p>
+<h4>3.1 JSX是表达式</h4>
+<p>跟其他JavaScript表达式一样，JSX也是表达式，被React编译后的JSX返回的是普通的JavaScript对象，这意味着你可以类似对待普通JavaScript表达式那样对待一个JSX语句：将它赋值给变量、将他作为函数参数或返回值等等：</p>
+<pre><code class="javascript">function getGreating (user) {
+  if (user) {
+    return &lt;h1&gt;hello {formatName(user)}!&lt;/h1&gt;
+  }
+  return &lt;h1&gt;hello world!&lt;/h1&gt;
+}</code></pre>
+<p>稍微深入一点，Babel会将JSX转换成对<code>react.creatElement()</code>的调用，所以下面两种写法完全等价：</p>
+<pre><code class="javascript">// JSX
+const mine = (
+  &lt;h1 className="greeting"&gt;
+    这是我的标题
+  &lt;/h1&gt;
+)
+
+// javaScript
+const yours = react.creatElement(
+  'h1',
+  { className: 'greeting ' },
+  '这是你的标题'
+)</code></pre>
+<p>然而<code>react.createElement()</code>返回的结果是类似下面这样的一个对象：</p>
+<pre><code class="javascript">const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: '这是谁的标题'
+  }
+ // ...
+}</code></pre>
+<p>这就不难理解JSX的用法了——像一个javaScript表达式那样去使用。</p>
+<h4>3.2 在JSX中嵌入JavaScript表达式</h4>
+<p>使用花括号<code>{}</code>，可以在JSX中嵌入任意JavaScript表达式：</p>
+<pre><code class="javascript">const element = (
+  &lt;h1&gt;
+    Hello, {formatName(user)}!
+  &lt;/h1&gt;
+);</code></pre>
+<p>为了提升可读性可以对JSX使用缩进和换行，但是为了避免JavaScript自动添加分号的机制给我们带来麻烦，应该在换行的JSX外面添加一对小括号。</p>
+<blockquote><p>在JSX的元素中插入用户输入的内容是安全的，React默认会对元素内的文本进行转义以防止XSS攻击。</p></blockquote>
+<h4>3.3 在JSX中声明属性</h4>
+<p>就像在HTML中声明元素属性，可以在“React元素”上直接声明某个属性。当希望属性值是变量或引用时，则就像在在JSX中嵌入JavaScript表达式，使用花括号<code>{}</code>来插入“React元素”的值。</p>
+<pre><code class="javascript">// 简单属性值
+const element = &lt;div tabIndex="0"&gt;&lt;/div&gt;;
+// 属性值为变量或引用
+const element = &lt;img src={user.avatarUrl}&gt;&lt;/img&gt;;</code></pre>
+<blockquote><p>需要注意的是，JSX中元素的属性名统一使用驼峰写法（camelCase），并且在React的内置元素上，诸如<code>class</code>、<code>for</code>等属性还需要换成<code>className</code>和<code>htmlFor</code>来使用（自定义元素可以正常使用）。</p></blockquote>
+<h4>3.4 在JSX中声明子元素</h4>
+<p>如果“React元素”的标签内没有子元素，则可以像在XML中那样使用单标签（包括React内置的HTML元素）。</p>
+<pre><code class="javascript">const element = &lt;img src={user.avatarUrl} /&gt;;</code></pre>
+<p>如果存在子元素，则就像在HTML中那样直接包裹在父元素中即可（注意换行的JSX要加小括号<code>()</code>）：</p>
+<pre><code class="javascript">const element = (
+  &lt;div&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;h2&gt;Good to see you here.&lt;/h2&gt;
+  &lt;/div&gt;
+)</code></pre>
+<h3>4. 渲染元素</h3>
+<p>元素是React应用的最小组成部分。元素描绘了界面。不同于浏览器的DOM元素，React元素是简单对象，创建它们比创建真实的DOM元素要节省太多性能，同时React DOM负责将React元素和真实DOM元素对应起来：</p>
+<pre><code class="javascript">const ele = &lt;h1&gt;Hello World!&lt;/h1&gt;</code></pre>
+<blockquote><p>不能将React元素和React组件搞混，React元素是React组件的组成部分，一个React组件由一个或多个React元素组成。同时也要注意区别DOM元素和React元素，DOM元素指的是HTML标准中规定的具体的某个元素，而React元素实际上是用于告诉React如何渲染页面、渲染时用到哪些DOM元素的一个配置对象，它与DOM元素不是一个概念。</p></blockquote>
+<h4>4.1 将React元素渲染到DOM中</h4>
+<p>先创建一个React元素，然后用<code>ReactDOM.render()</code>将其渲染到DOM的某个元素中（就这么简单）：</p>
+<pre><code class="javascript">const ele = &lt;h1&gt;Hello World!&lt;/h1&gt;
+ReactDOM.render(
+  ele,
+  document.getElementById('root') // 假设页面上有一个id为root的元素
+)</code></pre>
+<h4>4.2 更新已经渲染的元素</h4>
+<p>请记住，React元素是不可变的，一旦创建，你就不能再直接改变它的属性或子元素。假如我们要更新上面已经渲染到<code>id</code>为<code>root</code>的元素中的React元素，那么在没有其他手段的前提下就只能是像电影胶片一样一帧一帧进行刷新：</p>
+<pre><code class="javascript">function tick() {
+  const element = (
+    &lt;div&gt;
+      &lt;h1&gt;Hello World!&lt;/h1&gt;
+      &lt;p&gt;{new Date().toLocaleTimeString()}&lt;/p&gt;
+    &lt;/div&gt;  
+  )
+  ReactDOM.render(
+    ele,
+    document.getElementById('root') // 假设页面上有一个id为root的元素
+  )
+}
+setInterval(tick, 1000) // 每秒刷新</code></pre>
+<p>当然正常情况下我们不会这么做，但是这里很好的演示了另外一个问题——React在渲染页面时都做了什么？答案是它只渲染了与上次渲染时DOM中不同的部分！React会比较当前渲染与上次渲染时DOM中的不同之处，并只刷新这些地方！</p>
+<div class="image-package">
+<img src="https://facebook.github.io/react/img/docs/granular-dom-updates.gif" data-original-src="https://facebook.github.io/react/img/docs/granular-dom-updates.gif"><br><div class="image-caption">图片.png</div>
+</div>
+<h3>5. 组件和<code>props</code>（输入属性）</h3>
+<p>组件能让你将UI分割成独立的可复用的片段，这些片段都有各自隔离的作用域，不会互相干扰。你可以将组件理解成类似函数的概念，组件从它的<code>props</code>属性接受参数，然后返回React元素来描述UI。</p>
+<h4>5.1 用函数和类（<code>class</code>）定义组件</h4>
+<p>最简单的定义组件的方式就是写一个构造函数：</p>
+<pre><code class="javascript">function Welcom (props) {
+  return &lt;h1&gt;hello, {props.name}&lt;/h1&gt;
+}</code></pre>
+<p>上面这个<code>Welcom</code>构造函数就是一个合法的React组件，因为它接受一个对象作为参数，然后返回React元素。我们称这样的组件为“函数式”的组件因为它就是一个JavaScript构造函数。当然也可以使用ES6的<code>class</code>特性来定义函数：</p>
+<pre><code class="javascript">class Welcom extends React.Component {
+  render () {
+    return &lt;h1&gt;hello, {this.props.name}&lt;/h1&gt;
+  }
+}</code></pre>
+<p>ES6的<code>class</code>特性其实是ES5的构造函数和对象继承特性的一个语法糖，上面的写法也完全可以转换为ES5的写法。React推荐这种写法存粹是因为写起来方便，可读性也更强。但这种写法的重点是从<code>React.Component</code>继承一些核心的属性，后文还会细说。不过目前简单起见，我们暂时还只是用简单函数来创建组件。</p>
+<h4>5.2 渲染组件</h4>
+<p>React元素不仅仅可以用于指定需要使用的DOM元素，也可以用于指代自定义的组件：</p>
+<pre><code class="javascript">// 指代需要使用的DOM元素
+const ele1 = &lt;div /&gt;
+// 指代用户自定义的组件
+const ele2 = &lt;Welcom name="Sara"&gt;</code></pre>
+<p>当React遇到像<code>&lt;Welcom name="Sara"&gt;</code>这种自定义组件时，它会将JSX属性（也就是React元素属性）都放在一个对象中（这个对象就是<code>props</code>）并将其传递给组件的构造函数，构造函数再返回React元素用于渲染。</p>
+<h4>5.3 组件的组合</h4>
+<p>既然React元素可用于指代自定义组件，那么组件之间就可以相互嵌套使用：</p>
+<pre><code class="javascript">function Welcom (props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;
+}
+function WelcomList () {
+  return (
+    &lt;div&gt;
+      &lt;Welcom name="Sara" /&gt;
+      &lt;Welcom name="Lily" /&gt;
+      &lt;Welcom name="Tom" /&gt;
+    &lt;/div&gt;
+  )
+}
+function App () {
+  return &lt;WelcomList /&gt;
+}
+ReactDOM.render(
+  &lt;App /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<h4>5.4 组件的提取</h4>
+<p>既然组件可以嵌套组合使用，我们就可以将一个大的组件分割成很多小的组件。React官方鼓励对UI进行切割，分成不同的组件来实现。基本上一组React元素是否要提取成组件，可从以下两点考虑：</p>
+<ul>
+<li>这组元素在别的地方也要使用</li>
+<li>这组元素内部的功能相对复杂</li>
+</ul>
+<p>这部分其实是组件化的思路，这里不再展开。</p>
+<h4>5.5 只读的<code>props</code>
+</h4>
+<p>类似于“纯函数”的概念（不会改变任何外部的值，包括输入的参数，即与外部完全无耦合），不管是使用构造函数还是类来定义组件，组件都不应该修改它的<code>props</code>，因为这是输入到组件中的参数。在这一点上，React做了严格限定：</p>
+<blockquote><p><strong>所有的React组件必须像“纯函数”那样永远不修改自己的<code>props</code>属性</strong></p></blockquote>
+<h3>6. <code>state</code>（私有状态）和生命周期</h3>
+<p>我们以上文的时钟的例子来理解组件的私有状态和生命周期。</p>
+<pre><code class="javascript">function tick() {
+  const element = (
+    &lt;div&gt;
+      &lt;h1&gt;Hello World!&lt;/h1&gt;
+      &lt;p&gt;{new Date().toLocaleTimeString()}&lt;/p&gt;
+    &lt;/div&gt;  
+  )
+  ReactDOM.render(
+    ele,
+    document.getElementById('root') // 假设页面上有一个id为root的元素
+  )
+}
+setInterval(tick, 1000)</code></pre>
+<p>首先我们将时钟作为组件提取出来：</p>
+<pre><code class="javascript">// 时钟组件
+function Clock(props) {
+ return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello World!&lt;/h1&gt;
+      &lt;p&gt;{props.date.toLocaleTimeString()}&lt;/p&gt;
+    &lt;/div&gt;  
+  )
+}
+// 重新渲染
+function tick () {
+  ReactDOM.render(
+    &lt;Clock date={new Date()} /&gt;,
+    document.getElementById('root') // 假设页面上有一个id为root的元素
+  )
+}
+// 每秒刷新
+setInterval(tick, 1000)</code></pre>
+<p>我们发现对于<code>Clock</code>组件来说，刷新时间的功能其实完全与外部无关，它不涉及到任何外部的变量，完全可以由<code>Clock</code>组件自己来实现而不是让外部传递时间给它。此时<code>Clock</code>组件就需要“私有状态”来实现这个功能了。</p>
+<h4>6.1 从<code>React.Component</code>上继承</h4>
+<p>到目前为止，我们使用简单的构造函数来创建React组件，不管外部输入属性还是私有状态，都需要我们手动创建和管理，诸如修改私有状态后刷新渲染，外部输入属性为只读这类功能，如果我们没有在构造函数中手动实现则不会存在。</p>
+<p>这时我们可以从<code>React.Component</code>这个React内置的构造函数上继承一些有用的方法，这其中就包括对“私有状态”和“生命周期”实现。我们可以使用ES6的<code>class</code>特性来实现这个继承（当然这不是必须的，完全可以使用ES5的构造函数和原型的写法，但那样会繁琐很多，可读性也大大下降）：</p>
+<pre><code class="javascript">class Clock extends React.Component {
+  render () { // React提供的用于渲染和刷新组件的钩子函数
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.props.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+}</code></pre>
+<h4>6.2 定义组件私有状态</h4>
+<p><code>React.Component</code>提供了<code>props</code>和<code>state</code>来分别访问外部输入属性和内部私有状态。我们可以在时钟组件中通过<code>state</code>访问私有状态，然后在其构造函数中对该私有状态进行初始化，最后将它渲染到页面上：</p>
+<pre><code class="javascript">class Clock extends React.Component {
+  constructor (props) {
+    super(props) // ES6中类的constructor函数可以通过super访问其父类的构造函数
+    this.state = { date: new Date() }
+  } // 注意，ES6中类的方法之间不需要任何符号
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+ReactDOM.render(
+  &lt;Clock /&gt;, // 外部不再干涉Clock组件的刷新功能
+  document.getElementById('root)
+)</code></pre>
+<blockquote><p>注意<code>Clock</code>类中的<code>constructor</code>构造函数中，调用了父类的构造函数，这是为了实现完全的继承。使用<code>class</code>特性创建React组件时应当总是执行这一步。</p></blockquote>
+<h4>6.3 添加生命周期函数</h4>
+<p>从组件被创建到组件被渲染到页面到最终被销毁，React提供了一系列的“生命周期钩子”，用于在组件的不同阶段调用回掉函数。为了让<code>Clock</code>组件能够自己刷新，我们希望在组件被创建后立即添加一个计时器进行每秒刷新，同时在组件被销毁时一并销毁这个计时器，这样我们就需要用到两个生命周期钩子函数：</p>
+<ul>
+<li>
+<code>componentDidMount</code>：组件被渲染到页面后执行</li>
+<li>
+<code>componentWillUnmount</code>：组件被销毁前执行</li>
+</ul>
+<pre><code class="javascript">class Clock extends React.Component {
+  constructor (props) {
+    super(props) // ES6中类的constructor函数可以通过super访问其父类的构造函数
+    this.state = { date: new Date() }
+  } // 注意，ES6中类的方法之间不需要任何符号
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+  componentDidMount () {
+    this.timerID = setInterval(this.tick, 1000)
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID)
+  }
+}
+ReactDOM.render(
+  &lt;Clock /&gt;, // 外部不再干涉Clock组件的刷新功能
+  document.getElementById('root)
+)</code></pre>
+<blockquote><p>注意我们将定时器存储在了组件实例上，而不是<code>state</code>中，请先记住一个原则：任何没有在组件的<code>render()</code>函数中使用的变量，都不应该存放在<code>state</code>中</p></blockquote>
+<p>然后再添加<code>tick</code>方法。在这个方法中我们需要改变组件<code>state</code>中的<code>date</code>的值，这时需要用到方法<code>setState()</code>，该方法会通知React现在<code>state</code>已经改变了，而后React会去重新调用组件的<code>Render()</code>方法刷新DOM。这也是为什么会有<strong>任何没有在组件的<code>render()</code>函数中使用的变量，都不应该存放在<code>state</code>中 </strong>一说：</p>
+<pre><code class="javascript">class Clock extends React.Component {
+  constructor (props) {
+    super(props) // ES6中类的constructor函数可以通过super访问其父类的构造函数
+    this.state = { date: new Date() }
+  } // 注意，ES6中类的方法之间不需要任何符号
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+  componentDidMount () {
+    this.timerID = setInterval(this.tick, 1000)
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID)
+  }
+  tick () {
+    this.setState({ date: new Date() }) // 该方法会触发React调用实例的render方法进行重绘
+  }
+}
+ReactDOM.render(
+  &lt;Clock /&gt;, // 外部不再干涉Clock组件的刷新功能
+  document.getElementById('root)
+)</code></pre>
+<h4>6.4 组件生命周期小结</h4>
+<ul>
+<li>1) 当把组件传递给<code>ReactDOM.render()</code>函数后，React会调用组件的构造函数<code>constructor</code>，进行一些初始化</li>
+<li>2) 然后React会去调用<code>Clock</code>组件的<code>render()</code>方法将组件渲染出来</li>
+<li>3) 当组件渲染完毕后，React会调用<code>componentDidMount()</code>生命周期钩子函数</li>
+<li>4) 当<code>setState()</code>函数被调用时，React会重新调用组件的<code>render()</code>方法进行重绘</li>
+<li>5) 当组件被从DOM中移除时，React会调用<code>componentWillUnmount()</code>生命周期钩子函数</li>
+</ul>
+<h4>6.5 <code>setState</code>注意事项</h4>
+<ul>
+<li>
+<strong>不要直接改变<code>state</code></strong><br>直接对组件<code>state</code>中的属性赋值将不会触发DOM更新，因为React并不知道<code>state</code>被改变了</li>
+<li>
+<strong><code>state</code>的更新可能是异步的</strong><br>React会一次处理多个对<code>setState</code>的调用以提高性能，所以调用<code>setState()</code>时不应当直接基于另外一些来自<code>state</code>或<code>props</code>中的属性进行计算，很有可能当前计算的值并不是最终的值，当用于计算的另一些值再次变化后，React并不会刷新DOM（因为没有再次调用<code>setState()</code>）。为了修正这点，React提供另一种调用<code>setState()</code>函数的方式：传入一个函数，而不是对象<pre><code class="javascript">// 错误的用法
+this.setState({
+counter: this.state.counter + this.props.increment
+})
+// 正确的用法
+this.setState((prevState, props) =&gt; ({ // 接受一个表示前次state的参数和一个当前props的参数
+counter: prevState.counter + props.increment // 这里实际上是返回了一个对象，是ES6箭头函数的简写
+}))</code></pre>
+</li>
+<li>
+<strong><code>setState</code>是对象的合并而不是替换</strong><br><code>setState</code>方法是将传入的参数对象或函数返回的对象与现有的<code>state</code>对象进行合并，非常类似于使用<code>Object.assign(prevState, newState)</code>的效果</li>
+</ul>
+<h4>6.6 单项数据流</h4>
+<p>在React组件的嵌套中，父组件通过<code>props</code>向子组件传递数据，不管传递进来的数据是来自于父组件的<code>props</code>还是<code>state</code>还是别的地方，子组件不知道也不用关心，因为它不能修改通过<code>props</code>传递进来的数据而只能读取它。这样，数据就可以从最外层的父组件一路向内传递下去，但反过来却不行。</p>
+<p>这就是传说中的“单项数据流”（"top-down" or "unidirectional" data flow）了：每个组件只能修改本身和其子组件的数据，而不能修改父组件的数据。这样的好处不言而喻，数据和状态的管理会更加方便，但有时候在应用越来越复杂的时候，可能需要多个组件共享某些数据或状态，因此诞生了很多用于管理数据和状态的库，redux就是其中最有名的一个。</p>
+<h3>7. 事件</h3>
+<h4>7.1 基本用法</h4>
+<p>在React中绑定事件跟直接在HTML中绑定事件非常相似，定义一个事件处理函数，并在JSX中绑定它：</p>
+<pre><code class="javascript">function Greeting () {
+  function sayHi(e) {
+    e.preventDefault()
+    console.log('Hi!')
+  }
+ return (
+    &lt;a onClick={Greeting}&gt;Click me to say hi!&lt;/a&gt;
+ )
+}</code></pre>
+<p>所有事件绑定属性比如<code>onClick</code>均使用驼峰写法（camelCase），事件绑定属性的值不是字符串而是事件处理函数名称，可以带上<code>()</code>并传参，无参数时可省略<code>()</code>；</p>
+<h4>7.2 使用类定义组件时事件处理函数<code>this</code>的指向问题</h4>
+<p>使用ES6的<code>class</code>特性定义组件时，通常的做法是将事件处理函数当作该类的方法写在类中。但需要注意的是方法的<code>this</code>指向。</p>
+<p>定义在类中的方法的默认的<code>this</code>指向的是当前的类的实例，但事件处理函数因为是绑定到了具体的元素上，就会丢失定义时<code>this</code>的指向。如果你的处理函数中使用了<code>this</code>关键字来指向当前组件实例，那么你需要手动将该方法的<code>this</code>绑定到当前组件实例，有三种方法可以进行绑定：</p>
+<p><strong>1）在类的constructor中调用或在JSX中调用<code>Function.prototype.bind()</code>手动绑定</strong></p>
+<pre><code class="javascript">class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+    this.handleClick = this.handleClick.bind(this); // 手动绑定
+  }
+
+  handleClick() {
+    // console.log(this)
+    this.setState(prevState =&gt; ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      // &lt;button onClick={this.handleClick.bind(this)}&gt; // 在这里绑定也可以
+      &lt;button onClick={this.handleClick}&gt;
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      &lt;/button&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;Toggle /&gt;,
+  document.getElementById('content')
+);</code></pre>
+<p><strong>2）在JSX的事件绑定属性中的事件处理函数外层再套一个箭头函数，在其中返回处理函数调用结果</strong></p>
+<pre><code class="javascript">render() {
+  return (
+    &lt;button onClick={(e) =&gt; this.handleClick(e)}&gt; // 这么绑定也行
+      Click me
+    &lt;/button&gt;
+  );
+}</code></pre>
+<p><strong>3）Babel提供的一个ES8+的实验性质的写法</strong></p>
+<pre><code class="javascript">class LoggingButton extends React.Component {
+  handleClick = () =&gt; { // 纯粹的实验性质的写法，需要babel的支持
+    console.log('this is:', this);
+  }
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        Click me
+      &lt;/button&gt;
+    );
+  }
+}</code></pre>
+<h4>7.3 事件对象</h4>
+<p>React的事件对象是一个完全由React给出的事件对象，该对象对各个浏览器做了兼容，同时保留了标准事件对象的接口，详细信息可以查看React官网的参考。使用时需要关心的是如何在事件处理函数中使用事件对象。</p>
+<p>在事件绑定的JSX中，处理函数接受一个名为<code>event</code>的参数来表示事件对象，可以认为<code>event</code>在事件绑定插值中属于React的保留字，如果需要往事件处理函数中传递更多参数，请使用其他标识符。</p>
+<p>另外，7.2小节中不同的事件绑定写法也对事件对象的处置略有不同，主要体现在事件绑定JSX中：</p>
+<pre><code class="javascript">// 无括号
+&lt;button onClick={this.handleClick}&gt;
+  Click me
+&lt;/button&gt;
+
+// 带括号
+&lt;button onClick={this.handleClick(event)}&gt;
+  Click me
+&lt;/button&gt;
+
+// 调用了bind()
+&lt;button onClick={this.handleClick.bind(this, event)}&gt;
+  Click me
+&lt;/button&gt;</code></pre>
+<ul>
+<li>当事件绑定插值中的处理函数省略了<code>()</code>时，处理函数默认接受一个表示事件对象的参数，</li>
+<li>当事件绑定插值中的处理函数未省略<code>()</code>时，则需要显示地使用保留字<code>event</code>来传入事件对象，未传入则为<code>undefined</code>；<strong>注意，不管有没有在<code>constructor</code>中绑定<code>this</code>，直接在处理函数名后加<code>()</code>会导致页面初始化时该函数被立即执行一次，可能会有意想不到的错误，比如不能调用<code>setState()</code>方法等，所以强烈不建议用这种写法</strong>
+</li>
+<li>当事件绑定插值中的处理函数调用了<code>bind()</code>时，可以显示地使用保留字<code>event</code>来传入事件对象，否则React会在<code>bind()</code>函数参数序列的末尾默认增加一个表示事件对象的参数</li>
+</ul>
+<p>最后，在React中不能通过<code>return false</code>来阻止默认事件，而是需要在事件处理函数中显式调用<code>event.preventDefault()</code>。</p>
+<h3>8. 条件渲染</h3>
+<p>所有的JavaScript条件语句都可以用于React条件渲染，因为本质上JSX就是JavaScript的扩展语言。基于此有三种常用的条件渲染：</p>
+<ul>
+<li><code>if...else...</code></li>
+</ul>
+<pre><code class="javascript">function UserGreeting () {
+  return &lt;h1&gt;Welcom back!&lt;/h1&gt;
+}
+function GuestGreeting () {
+  return &lt;h1&gt;Please Sign up.&lt;/h1&gt;
+}
+function App (props) {
+  if (!props.isLoggedIn) {
+    return &lt;GuestGreeting /&gt;
+  }
+  return &lt;UserGreeting /&gt;
+}
+
+ReactDOM.render(
+  &lt;App isLoggedIn={false} /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<ul>
+<li>三元运算符</li>
+</ul>
+<pre><code class="javascript">function App (props) {
+  return props.isLoggedIn ? &lt;UserGreeting /&gt; : &lt;GuestGreeting /&gt;
+}</code></pre>
+<ul>
+<li>短路</li>
+</ul>
+<pre><code class="javascript">function App (props) {
+  return props.isLoggedIn &amp;&amp; &lt;UserGreeting /&gt; // props.isLoggedIn为true则显示UserGreeting，否则不显式
+}</code></pre>
+<p>如果判断逻辑比较复杂，不能用三元或者短路表达式编写，且判断后的结果需要直接用在JSX中（JSX中只能通过<code>{}</code>插入表达式，而不能使用语句），则可使用<code>if...else...</code>语句判断并将结果保存到变量，然后再返回变量或通过<code>{}</code>插值到JSX中：</p>
+<pre><code class="javascript">function UserGreeting () {
+  return &lt;h1&gt;Welcom back!&lt;/h1&gt;
+}
+function GuestGreeting () {
+  return &lt;h1&gt;Please Sign up.&lt;/h1&gt;
+}
+function Button (props) {
+  return &lt;button onClick={ props.handleToggle }&gt;toggle me&lt;/button&gt;
+}
+
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      prevState: false
+    }
+  }
+  handleClick () {
+    this.setState(prevState =&gt; ({ isLoggedIn: !prevState.isLoggedIn }))
+  }
+  render () {
+    let greeting = this.state.isLoggedIn ? &lt;UserGreeting /&gt; : &lt;GuestGreeting /&gt;
+    return (
+      &lt;div&gt;
+        &lt;div&gt;&lt;Button handleToggle={this.handleClick.bind(this)} /&gt;&lt;/div&gt; // 注意this的重定向
+        { greeting }
+      &lt;/div&gt;
+    )
+  }
+}
+
+ReactDOM.render(
+  &lt;App isLoggedIn={false} /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<p>另外，在组件的<code>render</code>函数中返回假值，会阻止组件渲染，结合条件判断，能够达到隐藏或显示组件的目的。</p>
+<h3>9. 列表和<code>key</code>（索引）</h3>
+<h4>9.1 渲染列表</h4>
+<p>可以像下面这样渲染一个列表：</p>
+<pre><code class="javascript">class List extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+  render () {
+    let list = this.props.number.map(number =&gt; ( // 拼装li
+      &lt;li&gt;{number}&lt;/li&gt;
+    ))
+    return (
+      &lt;ul&gt;{list}&lt;/ul&gt;
+    )
+  }
+}
+
+ReactDOM.render(
+  &lt;List number={[1, 2, 3, 4, 5]} /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<p>也可以将<code>map()</code>调用通过<code>{}</code>内联到JSX中：</p>
+<pre><code class="javascript">class List extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+  render () {
+    return (
+      &lt;ul&gt;{
+        this.props.number.map(number =&gt; ( // 内联map()方法
+          &lt;li key={number}&gt;{number}&lt;/li&gt;
+        ))
+      }&lt;/ul&gt;
+    )
+  }
+}</code></pre>
+<p>通常会使用数组的<code>map()</code>方法来从数组拼装列表，这与使用JavaScript拼装HTML类似。但上面的代码运行时会出现警告：</p>
+<div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/3094907-2df3975880fcb18d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/3094907-2df3975880fcb18d.png?imageMogr2/auto-orient/strip%7CimageView2/2"><br><div class="image-caption">列表渲染报错</div>
+</div>
+<h4>9.2 <code>key</code>
+</h4>
+<p>在渲染列表时，React的差异比较算法需要一个在列表范围内的唯一<code>key</code>来提高性能（通常用于获知哪个列表项改变了）。这个唯一的<code>key</code>需要我们手动提供。React官方建议使用列表数据中可用于唯一性标识的字段来作为列表项渲染时的<code>key</code>。如果实在没有，则可使用数组的<code>index</code>勉为其难，性能上可能会打折扣。</p>
+<pre><code class="javascript">    let list = this.props.number.map(number =&gt; ( // 拼装li
+      &lt;li key={number.toString()}&gt;{number}&lt;/li&gt;
+    ))</code></pre>
+<p><code>key</code>的使用需要注意一下几点：</p>
+<ul>
+<li>
+<strong>只能在数组内指定<code>key</code></strong>：准确地说，只能在<code>map()</code>的回调函数中使用<code>key</code>
+</li>
+<li>
+<strong><code>key</code>需要在列表范围内保证唯一性</strong>：同一个数组中的<code>key</code>需要保证唯一性，但不同数组中的<code>key</code>无所谓</li>
+<li>
+<strong><code>key</code>不会作为<code>props</code>传入组件</strong>：可以认为<code>key</code>是React在JSX中的保留字，你不能用它来向组件传递数据而应该改用其他词</li>
+</ul>
+<h3>10. 表单</h3>
+<p>在React中存在一个“受控组件（Controlled Component）”的概念，专门指代被React控制了的表单元素。通过<code>onChange</code>事件的处理函数将表单元素值的变化映射到组件的<code>state</code>中，然后再将组件中的这个映射好的值通过<code>{}</code>在JSX中插值给表单元素的<code>value</code>，（二者缺一不可）这就是一个被React控制了的组件也即“受控组件”了。</p>
+<pre><code class="javascript">class Form extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state ={
+      inputTextValue: ''
+    }
+    this.handleInputTextChange = this.handleInputTextChange.bind(this)
+  }
+  render () {
+    return (
+      &lt;form&gt;
+        &lt;input
+          value={this.state.inputTextValue} // 从state中将值绑定到表单元素
+          onChange={this.handleInputTextChange}/&gt; 
+      &lt;/form&gt;
+    )
+  }
+  handleInputTextChange (e) {
+    this.setState({
+      inputTextValue: e.target.value // 将表单元素的值的变化映射到state中
+    }) 
+  }
+}
+
+ReactDOM.render(
+  &lt;Form /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<p>基本上所有表单元素的使用都跟上例一样，通过<code>value</code>来“控制”元素，让<code>state</code>成为组件唯一的状态保存地。但是有时候在非React项目中使用React或者一些其他原因，我们不希望使用受控组件时，可以选择<a href="https://facebook.github.io/react/docs/uncontrolled-components.html" target="_blank">“非受控组件”</a>技术，这里不再展开。</p>
+<h3>11. 共享状态提升</h3>
+<p>考虑下面的需求，页面上有两个输入框，用来输入货币数量，一个输入美元，一个输入人民币，还有一行提示文字例如：“我们有1美元，也就是6.9元”；要求两个输入框随意输入一个，另一个输入框会根据汇率自动显示转换后的货币数量，并且下方提示文字也跟随变化。</p>
+<p>通常情况下，我们会编写一个用于输入货币数量的组件，然后在页面上放两个这样的组件：</p>
+<pre><code class="javascript">const exchangeRate = 6.9339
+const currency = {
+  '$': '美元',
+  '￥': '人民币'
+}
+class CurrencyInput extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      value: ''
+    }
+    this.changeHandler = this.changeHandler.bind(this)
+  }
+  render () {
+    return(
+      &lt;div&gt;
+        &lt;label&gt;
+          {currency[this.props.currency]}：
+          &lt;input value={this.state.value} onChange={this.changeHandler}/&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    )
+  }
+  changeHandler (e) {
+    this.setState({
+      value: e.target.value
+    })
+  }
+}
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+  render () {
+    return(
+      &lt;div&gt;
+        &lt;CurrencyInput currency={'$'}/&gt;
+        &lt;CurrencyInput currency={'￥'} /&gt;
+        &lt;p&gt;我们有{}美元，也就是{}元&lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+ReactDOM.render(
+  &lt;App /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<p>在上面的代码中我们将货币种类通过<code>props</code>传递给输入框组件，分别显示了美元和人名币的输入框。然后在输入框组件内部，我们使用了上一节的“受控组件”技术，将输入框的值交由组件的<code>state</code>控制。但并没有完成需求——两个输入框并不同步，同时组件外部也不知道组件中到底填了什么值所以下面的提示语句也没有更新。</p>
+<blockquote><p>很多时候，若干组件需要隐射同一个变化的状态。我们推荐将共享的状态提升至它们最近的共同的祖先上。</p></blockquote>
+<p>就像官方推荐的那样，这时我们就需要用到共享状态提升技术：我们要将两个货币输入框组件共享的“数量”状态，提升到它们最近的祖先组件上，也就是<code>App</code>组件上。</p>
+<pre><code class="javascript">// ...省略的代码
+class CurrencyInput extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+  }
+  render () {
+    return(
+      &lt;div&gt;
+        &lt;label&gt;
+          {CURRENCY[this.props.currency]}：
+          &lt;input value={this.props.value} onChange={this.handleChange}/&gt; // 需要传递额外参数的情况下只能再包一层
+        &lt;/label&gt;
+      &lt;/div&gt;
+    )
+  }
+  handleChange (e) {
+    this.props.onValueChange(e.target.value, this.props.currency) // 父级传递进来的回调函数
+  }
+}
+
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { // 将共享状态存放在祖先元素上
+      dollar: '',
+      yuan: ''
+    }
+    this.valueChangeHandler = this.valueChangeHandler.bind(this)
+  }
+  render () {
+    return( // 通过props向下传递共享状态和回调函数，很多情况下子组件共享的状态父级也需要用到
+      &lt;div&gt;
+        &lt;CurrencyInput value={this.state.dollar} currency={'$'} onValueChange={this.valueChangeHandler}/&gt;
+        &lt;CurrencyInput value={this.state.yuan} currency={'￥'} onValueChange={this.valueChangeHandler}/&gt;
+        &lt;p&gt;我们有{this.state.dollar}美元，也就是{this.state.yuan}元&lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+  valueChangeHandler (value, type) {
+    this.setState({
+      dollar: type === '$' ? value : this.exchange(value, type),
+      yuan: type === '￥' ? value : this.exchange(value, type)
+    })
+  }
+  exchange (value, type) {
+    return value * (type === '$' ? EXCHANGERATE : 1 / EXCHANGERATE)
+  }
+}
+// ... 省略的代码</code></pre>
+<p>其实不管是美元还是人民币，其实背后都只有一个数量，这个数量同时代表了一定数量的美元和一定数量的人民币，所以更好地，我们可以也应该只存放一个状态在父组件上，然后在渲染子组件时计算子组件的状态并传递给他们：</p>
+<pre><code class="javascript">// ... 省略的代码
+function exchange (value, type) { // 将转换函数放到全局以便子组件可以访问
+  return value * (type === '$' ? EXCHANGERATE : 1 / EXCHANGERATE)
+}
+
+class CurrencyInput extends React.Component {
+ // ... 省略的代码
+  render () {
+    // 子组件在渲染时自己计算自己的状态
+    let currentCurrency = this.props.currentCurrency
+    let currency = this.props.currency
+    let value = ''
+    if (currentCurrency.value !== '' &amp;&amp; !/^\s+$/g.test(currentCurrency.value)) {
+      value = currentCurrency.type === currency ?
+        currentCurrency.value : 
+        exchange(currentCurrency.value, currentCurrency.type)
+    }   
+    return(
+      &lt;div&gt;
+        &lt;label&gt;
+          {CURRENCY[currency]}：
+          &lt;input value={value} onChange={this.handleChange}/&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    )
+  }
+  // ... 省略的代码
+}
+
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      currentCurrency: { // 存储一个值，这里具体做法时存储当前改变的值
+        value: '',
+        type: ''
+      } 
+    }
+    this.valueChangeHandler = this.valueChangeHandler.bind(this)
+  }
+  render () {
+    // 将共享的状态传递给组件，同时父组件需要的状态也自己计算出来
+    return(
+      &lt;div&gt;
+        &lt;CurrencyInput
+          currentCurrency={this.state.currentCurrency}
+          currency={'$'}
+          onValueChange={this.valueChangeHandler}/&gt;
+        &lt;CurrencyInput
+          currentCurrency={this.state.currentCurrency}
+          currency={'￥'}
+          onValueChange={this.valueChangeHandler}/&gt;
+        &lt;p&gt;我们有{exchange(this.state.currentCurrency.value, '$')}美元，也就是{exchange(this.state.currentCurrency.value, '￥')}元&lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+  valueChangeHandler (value, type) { // 这里只需要简单映射关系即可，不再需要计算各个组件的具体状态值
+    this.setState({
+      currentCurrency: { value, type }
+    })
+  }
+
+}
+
+ReactDOM.render(
+  &lt;App /&gt;,
+  document.getElementById('root')
+)</code></pre>
+<p>上面的例子很好地贯彻了React官方反复强调推荐的“单项数据流”模式。虽然多写了一些代码，但是好处是可以减少因为子组件可以自行修改共享状态而引起的一些bug，毕竟我们将共享状态提升到父级组件上以后，所有对共享状态的修改就都集中在父级组件上了。</p>
+<p>另外，再次强调一个原则：<strong>任何可以由<code>state</code>或<code>props</code>计算出来的状态，都不应该放在<code>state</code>中</strong>。就像上例那样，应该直接在<code>render()</code>函数中直接计算后使用。</p>
+<h3>12. 聚合而不是继承</h3>
+<p>React官方推荐使用聚合而不是继承来在组件之间复用代码。通常有两种服用的情况，一种是组件的部分结构或内容不确定，需要由外部传入，这时组件就相当于一个容器；另一种是从更为抽象的组件创建一个较为具体的组件，比如“弹层”和“登陆弹层”。</p>
+<h4>12.1 容器</h4>
+<p>当组件内有部分内容不确定需要外部传入时，可以使用一个特殊的<code>props</code>属性<code>children</code>来传入。在组件内部访问<code>props.children</code>可以获取使用组件时写在组件开始和结束标签内的内容：</p>
+<pre><code class="javascript">function FancyBorder(props) {
+  return (
+    &lt;div className={'FancyBorder FancyBorder-' + props.color}&gt;
+      {props.children}
+    &lt;/div&gt;
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        Welcome
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        Thank you for visiting our spacecraft!
+      &lt;/p&gt;
+    &lt;/FancyBorder&gt;
+  );
+}</code></pre>
+<p>当组件有多个部分内容不确定都需要外部传入时，单靠<code>props.children</code>就不能满足需求了。但时不要忘记React组件的<code>props</code>可以接受任意类型的参数，所以其实组件的内容也完全可以直接使用<code>props</code>来传递到组件内部：</p>
+<pre><code class="javascript">function SplitPane(props) {
+  return (
+    &lt;div className="SplitPane"&gt;
+      &lt;div className="SplitPane-left"&gt;
+        {props.left}
+      &lt;/div&gt;
+      &lt;div className="SplitPane-right"&gt;
+        {props.right}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() { // JSX中使用{}插入另一个JSX，因为JSX也是表达式
+  return &lt;SplitPane left={ &lt;Contacts /&gt; } right={ &lt;Chat /&gt; } /&gt;
+}</code></pre>
+<h4>12.2 具象化</h4>
+<p>有时我们希望一个组件是另一个较为抽象的组件的特例（更为具象），官方推荐的做法是将抽象组件包裹在具象组件中，并使用<code>props</code>来配置它：</p>
+<pre><code class="javascript">function Dialog(props) {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        {props.message}
+      &lt;/p&gt;
+    &lt;/FancyBorder&gt;
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    &lt;Dialog
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" /&gt;
+  );
+}</code></pre>
+
+
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/2017/02/22/layout/saber.jpg&quot; alt=&quot;saber-w600&quot;&gt;&lt;/p&gt;
-
+      &lt;p&gt;&lt;/p&gt;&lt;h3&gt;1. 安装&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;1.1 尝试&lt;/h4&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;开始之前可以先去&lt;a href=&quot;http://codepen.io/gaearon/pen/rrpgNB?editors=0010&quot; tar
     
     </summary>
     
