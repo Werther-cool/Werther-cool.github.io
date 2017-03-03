@@ -19,7 +19,7 @@
 1.1 尝试开始之前可以先去codePen尝试一下，也可以下载这份HTML文件并编辑它来尝试React。1.2 Creat React App工具推荐使用React官方提供的Creat React App工具，来快速新建React单页面应用项目。1234npm install -g create-react-appcreate-react-app hello-worldcd hello">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React官方教程笔记">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/layout/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/02/22/React官方教程笔记/index.html">
 <meta property="og:site_name" content="Werther的博客">
 <meta property="og:description" content="1. 安装
 1.1 尝试开始之前可以先去codePen尝试一下，也可以下载这份HTML文件并编辑它来尝试React。1.2 Creat React App工具推荐使用React官方提供的Creat React App工具，来快速新建React单页面应用项目。1234npm install -g create-react-appcreate-react-app hello-worldcd hello">
@@ -188,7 +188,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
+    <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">1. 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">1.1 尝试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">1.2 Creat React App工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">1.3 推荐工作流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">1.4 CDN服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">2. Hello World</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">3. 初识JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">3.1 JSX是表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">3.2 在JSX中嵌入JavaScript表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">3.3 在JSX中声明属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">3.4 在JSX中声明子元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">4. 渲染元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">4.1 将React元素渲染到DOM中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">4.2 更新已经渲染的元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">5. 组件和props（输入属性）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">5.1 用函数和类（class）定义组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">5.2 渲染组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">5.3 组件的组合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">5.4 组件的提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">5.5 只读的props
 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">6. state（私有状态）和生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">6.1 从React.Component上继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">6.2 定义组件私有状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">6.3 添加生命周期函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">6.4 组件生命周期小结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">6.5 setState注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">6.6 单项数据流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">7. 事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">7.1 基本用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">7.2 使用类定义组件时事件处理函数this的指向问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">7.3 事件对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">8. 条件渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">9. 列表和key（索引）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">9.1 渲染列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">9.2 key
 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">10. 表单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">11. 共享状态提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">12. 聚合而不是继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">12.1 容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">12.2 具象化</span></a></li></ol></li></ol>
@@ -197,7 +197,7 @@
 
 
 <div class="content content-post CENTER">
-   <article id="post-layout" class="article article-type-post" itemprop="blogPost">
+   <article id="post-React官方教程笔记" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
     <h1 class="post-title">React官方教程笔记</h1>
 
@@ -220,7 +220,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://github.com/Werther-cool/2017/02/22/layout/#disqus_thread"></a>
+          <a href="https://github.com/Werther-cool/2017/02/22/React官方教程笔记/#disqus_thread"></a>
         </span>
       
 
@@ -1031,7 +1031,7 @@ function WelcomeDialog() {
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">Close</span>
+      <span id="close" class="btn-close">关闭</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -1134,7 +1134,7 @@ function WelcomeDialog() {
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'http://yoursite.com/2017/02/22/layout/';
+    var disqus_url = 'http://yoursite.com/2017/02/22/React官方教程笔记/';
     
     (function(){
       var dsq = document.createElement('script');
